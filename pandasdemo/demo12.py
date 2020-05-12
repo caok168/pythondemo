@@ -11,9 +11,9 @@ df.to_csv('foo.csv')
 data = pd.read_csv('foo.csv')
 # print(data)
 
-# df.to_hdf('foo.h5','df')
-# data = pd.read_hdf('foo.h5','df')
-# print(data)
+df.to_hdf('foo.h5','df')
+data = pd.read_hdf('foo.h5','df')
+print(data)
 
 df.to_excel('foo.xlsx',sheet_name="Sheet1")
 data = pd.read_excel('foo.xlsx','Sheet1',index_col=None,na_values=['NA'])
