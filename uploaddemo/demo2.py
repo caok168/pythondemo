@@ -13,7 +13,7 @@ def upload():
         basepath = os.path.dirname(__file__)
         upload_path = os.path.join(basepath, 'static/uploads', secure_filename(f.filename))
         f.save(upload_path)
-        return redirect(url_for('uploads'))
+        return redirect(url_for('upload'))
     return render_template('uploads.html')
 
 if __name__ == '__main__':
