@@ -10,7 +10,8 @@
     color: white;text-align: center;line-height: 50px;margin-left: 40%;font-size: 20px"></div>
 
     <script>
-            var ws = new WebSocket("ws://127.0.0.1:5000/echo");
+            // var ws = new WebSocket("ws://127.0.0.1:5000/echo");
+            var ws = new WebSocket("ws://192.168.11.65:5000/api/policeaffairs/train");
 
             ws.onmessage = function (event) {
                 content = document.createTextNode(event.data);
