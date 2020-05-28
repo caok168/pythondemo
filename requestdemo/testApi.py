@@ -30,6 +30,8 @@ def requestApi(datas):
     api = "http://127.0.0.1:9999/api/policeaffairs/search"
 
     results = []
+    result_keys = []
+    result_values = []
 
     for i in range(0, len(datas)):
         num = datas[i]['num']
@@ -56,8 +58,10 @@ def requestApi(datas):
         type2_list = []
         type2_list.append(type2_key)
         type2_list.append(type2_value)
-        results.append(str(type2_key))
-    return results
+        results.append(type2_list)
+        result_keys.append(str(type2_key))
+        result_values.append(str(type2_value))
+    return results, result_keys, result_values
 
 
 def requestApi_single(api, data):
@@ -71,14 +75,16 @@ def requestApi_single(api, data):
     return res
 
 
-def save_result(filename, datas):
-    df = pd.DataFrame(datas, columns=['type2'])
-    df.to_excel(filename, sheet_name="Sheet1", index=None)
+def save_result(filename, sheet_name, datas):
+    df = pd.DataFrame(datas, columns=['type2', 'values'])
+    df.to_excel(filename, sheet_name=sheet_name, index=None)
 
 
 if __name__ == '__main__':
     filename = 'test.xls'
     datas = get_datas(filename)
-    results = requestApi(datas)
+    results, keys, values = requestApi(datas)
     print(results)
-    save_result('./results.xls', results)
+    # save_result('./results.xls', 'Sheet1', keys)
+    # save_result('./results.xls', 'Sheet2', values)
+    save_result('./results.xls', 'Sheet2', results)
