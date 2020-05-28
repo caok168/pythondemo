@@ -7,6 +7,8 @@ ts = ts.cumsum()
 df = pd.DataFrame(np.random.randn(1000,4),index=ts.index,
                   columns=['A','B','C','D'])
 
+print(np.random.randn(1000,4))
+
 df.to_csv('foo.csv')
 data = pd.read_csv('foo.csv')
 # print(data)
