@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+service TrainService{
+  rpc LoadDataSet(DataPrepareRequest) returns (DataPrepareResponse){}
+  rpc Train(TrainRequest) returns (stream TrainResponse){}
+  rpc Test(TestRequest) returns (TestResponse){}
+}
+
+message Status{
+  int32 code = 1;
+  string message = 2;
+}
+
+message DataPrepareRequest{
+  string name = 1;
+  bytes content = 2;
+  string message = 3;
+}
+
+message DataPrepareResponse{
+  Status status = 1;
+}
+
+message TrainRequest{
+  Parameters parameters = 1;
+}
+
+message TrainResponse{
+  Status status = 1;
+  string content = 2;
+}
+
+message TestRequest{
+
+}
+
+message TestResponse{
+  Status status = 1;
+}
+
+message Parameters{
+  float lr = 1; //
+  int32 epoch = 2;
+  int32 batch = 3;
+}
+
