@@ -2,8 +2,6 @@ from concurrent import futures
 import math
 import time
 import grpc
-import pandas as pd
-from io import StringIO
 import train_pb2_grpc, train_pb2
 
 
