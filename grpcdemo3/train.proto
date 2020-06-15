@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+package pca;
+
 service TrainService{
   rpc LoadDataSet(DataPrepareRequest) returns (DataPrepareResponse){}
   rpc Train(TrainRequest) returns (stream TrainResponse){}

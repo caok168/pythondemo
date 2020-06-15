@@ -16,10 +16,12 @@ class TrainService(train_pb2_grpc.TrainServiceServicer):
         try:
             filename = "/home/lynxi/" + name
             with open(filename, mode='wb') as f:
-                f.write(content)
+                print(filename)
+                # f.write(content)
             status = train_pb2.Status(code=0, message="")
             return train_pb2.DataPrepareResponse(status=status)
         except Exception as e:
+            print(str(e))
             status = train_pb2.Status(code=0, message=str(e))
             return train_pb2.DataPrepareResponse(status=status)
 

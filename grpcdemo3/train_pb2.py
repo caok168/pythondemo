@@ -15,10 +15,10 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='train.proto',
-  package='',
+  package='pca',
   syntax='proto3',
   serialized_options=None,
-  serialized_pb=b'\n\x0btrain.proto\"\'\n\x06Status\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"D\n\x12\x44\x61taPrepareRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\x12\x0f\n\x07message\x18\x03 \x01(\t\".\n\x13\x44\x61taPrepareResponse\x12\x17\n\x06status\x18\x01 \x01(\x0b\x32\x07.Status\"/\n\x0cTrainRequest\x12\x1f\n\nparameters\x18\x01 \x01(\x0b\x32\x0b.Parameters\"9\n\rTrainResponse\x12\x17\n\x06status\x18\x01 \x01(\x0b\x32\x07.Status\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"\r\n\x0bTestRequest\"\'\n\x0cTestResponse\x12\x17\n\x06status\x18\x01 \x01(\x0b\x32\x07.Status\"6\n\nParameters\x12\n\n\x02lr\x18\x01 \x01(\x02\x12\r\n\x05\x65poch\x18\x02 \x01(\x05\x12\r\n\x05\x62\x61tch\x18\x03 \x01(\x05\x32\x9d\x01\n\x0cTrainService\x12:\n\x0bLoadDataSet\x12\x13.DataPrepareRequest\x1a\x14.DataPrepareResponse\"\x00\x12*\n\x05Train\x12\r.TrainRequest\x1a\x0e.TrainResponse\"\x00\x30\x01\x12%\n\x04Test\x12\x0c.TestRequest\x1a\r.TestResponse\"\x00\x62\x06proto3'
+  serialized_pb=b'\n\x0btrain.proto\x12\x03pca\"\'\n\x06Status\x12\x0c\n\x04\x63ode\x18\x01 \x01(\x05\x12\x0f\n\x07message\x18\x02 \x01(\t\"D\n\x12\x44\x61taPrepareRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\x0c\x12\x0f\n\x07message\x18\x03 \x01(\t\"2\n\x13\x44\x61taPrepareResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0b\x32\x0b.pca.Status\"3\n\x0cTrainRequest\x12#\n\nparameters\x18\x01 \x01(\x0b\x32\x0f.pca.Parameters\"=\n\rTrainResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0b\x32\x0b.pca.Status\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"\r\n\x0bTestRequest\"+\n\x0cTestResponse\x12\x1b\n\x06status\x18\x01 \x01(\x0b\x32\x0b.pca.Status\"6\n\nParameters\x12\n\n\x02lr\x18\x01 \x01(\x02\x12\r\n\x05\x65poch\x18\x02 \x01(\x05\x12\r\n\x05\x62\x61tch\x18\x03 \x01(\x05\x32\xb5\x01\n\x0cTrainService\x12\x42\n\x0bLoadDataSet\x12\x17.pca.DataPrepareRequest\x1a\x18.pca.DataPrepareResponse\"\x00\x12\x32\n\x05Train\x12\x11.pca.TrainRequest\x1a\x12.pca.TrainResponse\"\x00\x30\x01\x12-\n\x04Test\x12\x10.pca.TestRequest\x1a\x11.pca.TestResponse\"\x00\x62\x06proto3'
 )
 
 
@@ -26,20 +26,20 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _STATUS = _descriptor.Descriptor(
   name='Status',
-  full_name='Status',
+  full_name='pca.Status',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='code', full_name='Status.code', index=0,
+      name='code', full_name='pca.Status.code', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='message', full_name='Status.message', index=1,
+      name='message', full_name='pca.Status.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -57,34 +57,34 @@ _STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=15,
-  serialized_end=54,
+  serialized_start=20,
+  serialized_end=59,
 )
 
 
 _DATAPREPAREREQUEST = _descriptor.Descriptor(
   name='DataPrepareRequest',
-  full_name='DataPrepareRequest',
+  full_name='pca.DataPrepareRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='name', full_name='DataPrepareRequest.name', index=0,
+      name='name', full_name='pca.DataPrepareRequest.name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='content', full_name='DataPrepareRequest.content', index=1,
+      name='content', full_name='pca.DataPrepareRequest.content', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=b"",
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='message', full_name='DataPrepareRequest.message', index=2,
+      name='message', full_name='pca.DataPrepareRequest.message', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -102,20 +102,20 @@ _DATAPREPAREREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=56,
-  serialized_end=124,
+  serialized_start=61,
+  serialized_end=129,
 )
 
 
 _DATAPREPARERESPONSE = _descriptor.Descriptor(
   name='DataPrepareResponse',
-  full_name='DataPrepareResponse',
+  full_name='pca.DataPrepareResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='DataPrepareResponse.status', index=0,
+      name='status', full_name='pca.DataPrepareResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -133,20 +133,20 @@ _DATAPREPARERESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=126,
-  serialized_end=172,
+  serialized_start=131,
+  serialized_end=181,
 )
 
 
 _TRAINREQUEST = _descriptor.Descriptor(
   name='TrainRequest',
-  full_name='TrainRequest',
+  full_name='pca.TrainRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='parameters', full_name='TrainRequest.parameters', index=0,
+      name='parameters', full_name='pca.TrainRequest.parameters', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -164,27 +164,27 @@ _TRAINREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=174,
-  serialized_end=221,
+  serialized_start=183,
+  serialized_end=234,
 )
 
 
 _TRAINRESPONSE = _descriptor.Descriptor(
   name='TrainResponse',
-  full_name='TrainResponse',
+  full_name='pca.TrainResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='TrainResponse.status', index=0,
+      name='status', full_name='pca.TrainResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='content', full_name='TrainResponse.content', index=1,
+      name='content', full_name='pca.TrainResponse.content', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -202,14 +202,14 @@ _TRAINRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=223,
-  serialized_end=280,
+  serialized_start=236,
+  serialized_end=297,
 )
 
 
 _TESTREQUEST = _descriptor.Descriptor(
   name='TestRequest',
-  full_name='TestRequest',
+  full_name='pca.TestRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -226,20 +226,20 @@ _TESTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=282,
-  serialized_end=295,
+  serialized_start=299,
+  serialized_end=312,
 )
 
 
 _TESTRESPONSE = _descriptor.Descriptor(
   name='TestResponse',
-  full_name='TestResponse',
+  full_name='pca.TestResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='TestResponse.status', index=0,
+      name='status', full_name='pca.TestResponse.status', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -257,34 +257,34 @@ _TESTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=297,
-  serialized_end=336,
+  serialized_start=314,
+  serialized_end=357,
 )
 
 
 _PARAMETERS = _descriptor.Descriptor(
   name='Parameters',
-  full_name='Parameters',
+  full_name='pca.Parameters',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='lr', full_name='Parameters.lr', index=0,
+      name='lr', full_name='pca.Parameters.lr', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='epoch', full_name='Parameters.epoch', index=1,
+      name='epoch', full_name='pca.Parameters.epoch', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='batch', full_name='Parameters.batch', index=2,
+      name='batch', full_name='pca.Parameters.batch', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -302,8 +302,8 @@ _PARAMETERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=338,
-  serialized_end=392,
+  serialized_start=359,
+  serialized_end=413,
 )
 
 _DATAPREPARERESPONSE.fields_by_name['status'].message_type = _STATUS
@@ -323,56 +323,56 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Status = _reflection.GeneratedProtocolMessageType('Status', (_message.Message,), {
   'DESCRIPTOR' : _STATUS,
   '__module__' : 'train_pb2'
-  # @@protoc_insertion_point(class_scope:Status)
+  # @@protoc_insertion_point(class_scope:pca.Status)
   })
 _sym_db.RegisterMessage(Status)
 
 DataPrepareRequest = _reflection.GeneratedProtocolMessageType('DataPrepareRequest', (_message.Message,), {
   'DESCRIPTOR' : _DATAPREPAREREQUEST,
   '__module__' : 'train_pb2'
-  # @@protoc_insertion_point(class_scope:DataPrepareRequest)
+  # @@protoc_insertion_point(class_scope:pca.DataPrepareRequest)
   })
 _sym_db.RegisterMessage(DataPrepareRequest)
 
 DataPrepareResponse = _reflection.GeneratedProtocolMessageType('DataPrepareResponse', (_message.Message,), {
   'DESCRIPTOR' : _DATAPREPARERESPONSE,
   '__module__' : 'train_pb2'
-  # @@protoc_insertion_point(class_scope:DataPrepareResponse)
+  # @@protoc_insertion_point(class_scope:pca.DataPrepareResponse)
   })
 _sym_db.RegisterMessage(DataPrepareResponse)
 
 TrainRequest = _reflection.GeneratedProtocolMessageType('TrainRequest', (_message.Message,), {
   'DESCRIPTOR' : _TRAINREQUEST,
   '__module__' : 'train_pb2'
-  # @@protoc_insertion_point(class_scope:TrainRequest)
+  # @@protoc_insertion_point(class_scope:pca.TrainRequest)
   })
 _sym_db.RegisterMessage(TrainRequest)
 
 TrainResponse = _reflection.GeneratedProtocolMessageType('TrainResponse', (_message.Message,), {
   'DESCRIPTOR' : _TRAINRESPONSE,
   '__module__' : 'train_pb2'
-  # @@protoc_insertion_point(class_scope:TrainResponse)
+  # @@protoc_insertion_point(class_scope:pca.TrainResponse)
   })
 _sym_db.RegisterMessage(TrainResponse)
 
 TestRequest = _reflection.GeneratedProtocolMessageType('TestRequest', (_message.Message,), {
   'DESCRIPTOR' : _TESTREQUEST,
   '__module__' : 'train_pb2'
-  # @@protoc_insertion_point(class_scope:TestRequest)
+  # @@protoc_insertion_point(class_scope:pca.TestRequest)
   })
 _sym_db.RegisterMessage(TestRequest)
 
 TestResponse = _reflection.GeneratedProtocolMessageType('TestResponse', (_message.Message,), {
   'DESCRIPTOR' : _TESTRESPONSE,
   '__module__' : 'train_pb2'
-  # @@protoc_insertion_point(class_scope:TestResponse)
+  # @@protoc_insertion_point(class_scope:pca.TestResponse)
   })
 _sym_db.RegisterMessage(TestResponse)
 
 Parameters = _reflection.GeneratedProtocolMessageType('Parameters', (_message.Message,), {
   'DESCRIPTOR' : _PARAMETERS,
   '__module__' : 'train_pb2'
-  # @@protoc_insertion_point(class_scope:Parameters)
+  # @@protoc_insertion_point(class_scope:pca.Parameters)
   })
 _sym_db.RegisterMessage(Parameters)
 
@@ -380,16 +380,16 @@ _sym_db.RegisterMessage(Parameters)
 
 _TRAINSERVICE = _descriptor.ServiceDescriptor(
   name='TrainService',
-  full_name='TrainService',
+  full_name='pca.TrainService',
   file=DESCRIPTOR,
   index=0,
   serialized_options=None,
-  serialized_start=395,
-  serialized_end=552,
+  serialized_start=416,
+  serialized_end=597,
   methods=[
   _descriptor.MethodDescriptor(
     name='LoadDataSet',
-    full_name='TrainService.LoadDataSet',
+    full_name='pca.TrainService.LoadDataSet',
     index=0,
     containing_service=None,
     input_type=_DATAPREPAREREQUEST,
@@ -398,7 +398,7 @@ _TRAINSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Train',
-    full_name='TrainService.Train',
+    full_name='pca.TrainService.Train',
     index=1,
     containing_service=None,
     input_type=_TRAINREQUEST,
@@ -407,7 +407,7 @@ _TRAINSERVICE = _descriptor.ServiceDescriptor(
   ),
   _descriptor.MethodDescriptor(
     name='Test',
-    full_name='TrainService.Test',
+    full_name='pca.TrainService.Test',
     index=2,
     containing_service=None,
     input_type=_TESTREQUEST,

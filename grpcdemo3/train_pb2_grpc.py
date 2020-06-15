@@ -14,17 +14,17 @@ class TrainServiceStub(object):
             channel: A grpc.Channel.
         """
         self.LoadDataSet = channel.unary_unary(
-                '/TrainService/LoadDataSet',
+                '/pca.TrainService/LoadDataSet',
                 request_serializer=train__pb2.DataPrepareRequest.SerializeToString,
                 response_deserializer=train__pb2.DataPrepareResponse.FromString,
                 )
         self.Train = channel.unary_stream(
-                '/TrainService/Train',
+                '/pca.TrainService/Train',
                 request_serializer=train__pb2.TrainRequest.SerializeToString,
                 response_deserializer=train__pb2.TrainResponse.FromString,
                 )
         self.Test = channel.unary_unary(
-                '/TrainService/Test',
+                '/pca.TrainService/Test',
                 request_serializer=train__pb2.TestRequest.SerializeToString,
                 response_deserializer=train__pb2.TestResponse.FromString,
                 )
@@ -71,7 +71,7 @@ def add_TrainServiceServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'TrainService', rpc_method_handlers)
+            'pca.TrainService', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
 
 
@@ -89,7 +89,7 @@ class TrainService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/TrainService/LoadDataSet',
+        return grpc.experimental.unary_unary(request, target, '/pca.TrainService/LoadDataSet',
             train__pb2.DataPrepareRequest.SerializeToString,
             train__pb2.DataPrepareResponse.FromString,
             options, channel_credentials,
@@ -105,7 +105,7 @@ class TrainService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/TrainService/Train',
+        return grpc.experimental.unary_stream(request, target, '/pca.TrainService/Train',
             train__pb2.TrainRequest.SerializeToString,
             train__pb2.TrainResponse.FromString,
             options, channel_credentials,
@@ -121,7 +121,7 @@ class TrainService(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/TrainService/Test',
+        return grpc.experimental.unary_unary(request, target, '/pca.TrainService/Test',
             train__pb2.TestRequest.SerializeToString,
             train__pb2.TestResponse.FromString,
             options, channel_credentials,
