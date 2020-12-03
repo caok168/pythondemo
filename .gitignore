@@ -1,2 +1,7 @@
 .idea
 grpcdemo3/__pycache__/
+lib
+lib64
+pyvenv.cfg
+venv
+bin
