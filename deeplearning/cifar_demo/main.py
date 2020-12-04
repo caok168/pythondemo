@@ -81,7 +81,7 @@ def main():
     x, label = iter(cifar_train).next()
     print("x:", x.shape, 'label:', label.shape)
 
-    device = 'cpu' #torch.device('cuda')
+    device = torch.device('cuda')
     model = Lenet5().to(device)
     # model = Lenet5()
     criteon = nn.CrossEntropyLoss()
